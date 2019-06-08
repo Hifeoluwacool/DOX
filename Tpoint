@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counter</title>
+    <!download form it !>
+    <script src="D://js/jquery-3.3.1.js"></script>
+    <style>
+        body {
+            background: black;
+            color: white;
+        }
+        #tpoint {
+            position: absolute;
+            top: 25%;
+            left: 40%;
+            width: 200px;
+            height: 200px;
+            border-radius: 200px;
+        }
+        #tpoint .bts , .border {
+            border: 2px solid white;
+            border-radius: 20px;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            display: none;
+        }
+        .bts:nth-child(1) {
+            transform: translate(90px,20px);
+        }
+        .bts:nth-child(2) {
+            transform: translate(20px,70px);
+        }
+        .bts:nth-child(3) {
+            transform: translate(160px,50px);
+        }
+        .bts:nth-child(4) {
+            transform: translate(90px,100px);
+        }
+        .bts:nth-child(5) {
+            transform: translate(90px,-10px);
+            box-shadow: 0px 0px 0px 100px rgba(255,255,255,.5);
+            border-radius: 20px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            z-index: 1;
+            position: relative;
+            background: pink;
+        }
+        #click {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background: pink;
+            box-shadow: 0px 0px 0px 30px rgba(255,255,255,.5);
+            transform: translate(80px,60px);
+            border: 5px solid white;
+        }
+        .border {
+            width: 90px;
+            height: 90px;
+            border: 5px solid seashell;
+            border-radius: 45px;
+            transform: translate(55px,-73px);
+            z-index: 0;
+            position: relative;
+        }
+        div a {
+            text-decoration: none;
+            color: white;
+            vertical-align: sub
+        }
+    </style>
+</head>
+<body>
+    <div id="tpoint">
+        <div class="bts"><span><a href="">P</a></span></div>
+        <div class="bts"><span><a href="">O</a></span></div>
+        <div class="bts"><span><a href="">I</a></span></div>
+        <div class="bts"><span><a href="">N</a></span></div>
+        <div class="bts"><span><a href="">T</a></span></div>
+        <div class="border"></div>
+        <p id="click"></p>
+    </div>
+</body>
+</html>
+
+<script>
+    $(function(){
+        $("#click").on('click',function(){
+            $("#tpoint div").show();
+            $("#click").hide();
+        })
+        $("#tpoint div:nth-child(5)").on('click',function(){
+            $("#tpoint div").hide();
+            $("#click").show();
+        })
+    })
+</script>
